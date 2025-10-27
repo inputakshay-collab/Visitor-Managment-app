@@ -84,6 +84,34 @@ html.theme-dark {
   --shadow-md: 0 8px 18px rgba(0,0,0,0.6);
 }
 
+/* also support body.theme-* in case html class cannot be set in some embedding contexts */
+body.theme-orange {
+  --primary-gradient: linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%);
+  --secondary-gradient: linear-gradient(135deg, #ffd280 0%, #ffb56b 100%);
+  --background-color: #fbfbff;
+  --surface-color: #ffffff;
+  --text-primary: #1f2937;
+}
+
+body.theme-light {
+  --primary-gradient: linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%);
+  --secondary-gradient: linear-gradient(135deg, #fff1e0 0%, #fff6ee 100%);
+  --background-color: #ffffff;
+  --surface-color: #fbfbff;
+  --text-primary: #111827;
+}
+
+body.theme-dark {
+  --primary-gradient: linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%);
+  --secondary-gradient: linear-gradient(135deg, #6b3b00 0%, #8e4d07 100%);
+  --background-color: #0b1220;
+  --surface-color: #0f1724;
+  --text-primary: #e6eef8;
+  --text-secondary: #cbd5e1;
+  --border-color: rgba(255,123,0,0.06);
+  --shadow-md: 0 8px 18px rgba(0,0,0,0.6);
+}
+
 
 * {
   margin: 0;
