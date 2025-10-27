@@ -1,18 +1,18 @@
 /* Premium, Modern & Visually Stunning Design for Visitor Management System */
 
 :root {
-  /* Refined Color Palette - Elegant Purple & Pastel Accents */
-  --primary-gradient: linear-gradient(135deg, #6a4bf8 0%, #b36dfb 100%);
-  --secondary-gradient: linear-gradient(135deg, #9be7ff 0%, #c6a8ff 100%);
+  /* Refined Color Palette - Vibrant Orange & Warm Accents */
+  --primary-gradient: linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%);
+  --secondary-gradient: linear-gradient(135deg, #ffd280 0%, #ffb56b 100%);
   --success-gradient: linear-gradient(135deg, #4ce3b3 0%, #2ad1b0 100%);
   --warning-gradient: linear-gradient(135deg, #ffd38a 0%, #ffb199 100%);
   --danger-gradient: linear-gradient(135deg, #ff9aa2 0%, #ffb1d6 100%);
 
-  --primary-color: #6a4bf8;
-  --primary-dark: #5a34d9;
-  --primary-light: #f1ecff;
-  --secondary-color: #c6a8ff;
-  --accent-color: #9be7ff;
+  --primary-color: #ff7b00;
+  --primary-dark: #e56e00;
+  --primary-light: #fff4e6;
+  --secondary-color: #ffb56b;
+  --accent-color: #ffd280;
   --success-color: #10d9c4;
   --warning-color: #ffb800;
   --error-color: #ff6b9d;
@@ -26,8 +26,8 @@
   --text-muted: #93a1b0;
 
   /* Borders & Shadows */
-  --border-color: rgba(99, 102, 241, 0.10);
-  --border-hover: rgba(99, 102, 241, 0.14);
+  --border-color: rgba(255, 123, 0, 0.10);
+  --border-hover: rgba(255, 123, 0, 0.14);
   --shadow-xs: 0 1px 2px rgba(31, 41, 55, 0.04);
   --shadow-sm: 0 6px 12px rgba(31, 41, 55, 0.06);
   --shadow-md: 0 10px 20px rgba(31, 41, 55, 0.08);
@@ -79,9 +79,9 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(79, 172, 254, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(255, 123, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 181, 107, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 210, 128, 0.05) 0%, transparent 50%);
   z-index: -1;
   animation: backgroundShift 20s ease-in-out infinite;
 }
@@ -663,7 +663,7 @@ body::before {
 }
 
 .data-table th {
-  background: linear-gradient(90deg, rgba(242,238,255,0.95) 0%, rgba(248,246,255,0.95) 100%);
+  background: linear-gradient(90deg, rgba(255,244,230,0.95) 0%, rgba(255,248,242,0.95) 100%);
   font-weight: 700;
   color: var(--text-primary);
   font-size: 0.95rem;
