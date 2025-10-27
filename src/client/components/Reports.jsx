@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   Chart as ChartJS,
+  import React, { useState, useEffect } from 'react';
   CategoryScale,
   LinearScale,
   PointElement,
@@ -8,41 +9,77 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend,
-  ArcElement,
-  Filler
-} from 'chart.js';
-import { Line, Bar, Doughnut } from 'react-chartjs-2';
-import './Reports.css';
+  import React, { useState, useEffect } from 'react';
+  import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+    ArcElement,
+    Filler
+  } from 'chart.js';
+  import { Line, Bar, Doughnut } from 'react-chartjs-2';
+  import './Reports.css';
+  import { VisitorService } from '../services/VisitorService';
+  import { RoomService } from '../services/RoomService';
 
-// Register ChartJS components
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-  ArcElement,
-  Filler
-);
+  // Register ChartJS components
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+    ArcElement,
+    Filler
+  );
 
-export default function Reports() {
-  const [activeTimeframe, setActiveTimeframe] = useState('week');
+  export default function Reports() {
+    const [activeTimeframe, setActiveTimeframe] = useState('week');
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [visitorRequests, setVisitorRequests] = useState([]);
+    const [roomBookings, setRoomBookings] = useState([]);
 
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: 'top',
-        labels: {
-          usePointStyle: true,
-          padding: 20,
-          font: {
-            size: 12
+    const visitorService = new VisitorService();
+    const roomService = new RoomService();
+
+    useEffect(() => {
+      let mounted = true;
+      async function loadData() {
+        setLoading(true);
+        setError(null);
+        try {
+          const [requests, bookings] = await Promise.all([
+            visitorService.getVisitorRequests(),
+            roomService.getRoomBookings()
+          ]);
+
+          if (!mounted) return;
+          setVisitorRequests(Array.isArray(requests) ? requests : []);
+          setRoomBookings(Array.isArray(bookings) ? bookings : []);
+        } catch (err) {
+          console.error('Reports load error:', err);
+          if (mounted) setError(err?.message || String(err));
+        } finally {
+          if (mounted) setLoading(false);
+        }
+      }
+
+      loadData();
+
+      return () => { mounted = false; };
+    }, []);
+
+    const chartOptions = {
           }
         }
       },
@@ -162,6 +199,8 @@ export default function Reports() {
       hoverBackgroundColor: 'rgba(255, 123, 0, 1)'
     }]
   };
+        {loading && <div className="reports-loading">Loading reports…</div>}
+        {error && <div className="reports-error">Error loading reports: {error}</div>}
 
   return (
     <div className="reports-container">
@@ -267,6 +306,24 @@ export default function Reports() {
             <tr>
               <th>Visitor Name</th>
               <th>Purpose</th>
+              {visitorRequests && visitorRequests.length > 0 ? (
+                visitorRequests.slice(0, 10).map((v, idx) => (
+                  <tr key={v.sys_id || idx}>
+                    <td>{v.visitor_name || v.name || v.display_value || v.requested_for || 'Unknown'}</td>
+                    <td>{v.purpose || v.visit_purpose || v.short_description || '—'}</td>
+                    <td>{(v.sys_created_on || v.expected_start || v.start_time) ? new Date(v.sys_created_on || v.expected_start || v.start_time).toLocaleString() : '—'}</td>
+                    <td>
+                      <span className={`status-badge ${v.state === 'checked_out' || v.status === 'checked_out' ? 'status-checked-out' : 'status-checked-in'}`}>
+                        {v.state || v.status || (v.checked_in ? 'Checked In' : 'Pending')}
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="4" style={{ textAlign: 'center', padding: '1rem', color: '#666' }}>No recent activity to display</td>
+                </tr>
+              )}
               <th>Check-in Time</th>
               <th>Status</th>
             </tr>
