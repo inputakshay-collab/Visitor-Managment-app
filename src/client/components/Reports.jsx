@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
   ArcElement,
+  Filler
 } from 'chart.js';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
 import './Reports.css';
@@ -24,11 +25,82 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  Filler
 );
 
 export default function Reports() {
   const [activeTimeframe, setActiveTimeframe] = useState('week');
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top',
+        labels: {
+          usePointStyle: true,
+          padding: 20,
+          font: {
+            size: 12
+          }
+        }
+      },
+      tooltip: {
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        titleColor: '#1f2937',
+        bodyColor: '#1f2937',
+        borderColor: 'rgba(255, 123, 0, 0.1)',
+        borderWidth: 1,
+        padding: 12,
+        boxPadding: 6,
+        usePointStyle: true
+      }
+    },
+    interaction: {
+      intersect: false,
+      mode: 'index'
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false
+        }
+      },
+      y: {
+        beginAtZero: true,
+        grid: {
+          color: 'rgba(0, 0, 0, 0.05)'
+        }
+      }
+    }
+  };
+
+  const doughnutOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'right',
+        labels: {
+          usePointStyle: true,
+          padding: 20,
+          font: {
+            size: 12
+          }
+        }
+      },
+      tooltip: {
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        titleColor: '#1f2937',
+        bodyColor: '#1f2937',
+        borderColor: 'rgba(255, 123, 0, 0.1)',
+        borderWidth: 1,
+        padding: 12,
+        boxPadding: 6
+      }
+    }
+  };
 
   // Dummy data for visitor traffic
   const visitorTrafficData = {
@@ -37,82 +109,58 @@ export default function Reports() {
       {
         label: 'Visitors',
         data: [65, 59, 80, 81, 56, 40, 70],
-        fill: true,
         borderColor: '#ff7b00',
         backgroundColor: 'rgba(255, 123, 0, 0.1)',
         tension: 0.4,
+        fill: 'origin',
+        pointStyle: 'circle',
+        pointRadius: 4,
+        pointHoverRadius: 6
       },
       {
         label: 'Check-ins',
         data: [45, 50, 60, 70, 45, 30, 50],
-        fill: true,
         borderColor: '#ffb56b',
         backgroundColor: 'rgba(255, 181, 107, 0.1)',
         tension: 0.4,
-      },
-    ],
+        fill: 'origin',
+        pointStyle: 'circle',
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }
+    ]
   };
 
   // Dummy data for visitor purpose distribution
   const visitorPurposeData = {
     labels: ['Meeting', 'Interview', 'Delivery', 'Event', 'Other'],
-    datasets: [
-      {
-        data: [40, 25, 15, 12, 8],
-        backgroundColor: [
-          'rgba(255, 123, 0, 0.8)',
-          'rgba(255, 154, 68, 0.8)',
-          'rgba(255, 181, 107, 0.8)',
-          'rgba(255, 210, 128, 0.8)',
-          'rgba(255, 228, 164, 0.8)',
-        ],
-        borderColor: [
-          'rgba(255, 123, 0, 1)',
-          'rgba(255, 154, 68, 1)',
-          'rgba(255, 181, 107, 1)',
-          'rgba(255, 210, 128, 1)',
-          'rgba(255, 228, 164, 1)',
-        ],
-        borderWidth: 1,
-      },
-    ],
+    datasets: [{
+      data: [40, 25, 15, 12, 8],
+      backgroundColor: [
+        'rgba(255, 123, 0, 0.8)',
+        'rgba(255, 154, 68, 0.8)',
+        'rgba(255, 181, 107, 0.8)',
+        'rgba(255, 210, 128, 0.8)',
+        'rgba(255, 228, 164, 0.8)'
+      ],
+      borderWidth: 0,
+      hoverOffset: 4
+    }]
   };
 
   // Dummy data for room bookings
   const roomBookingData = {
     labels: ['Meeting Room 1', 'Meeting Room 2', 'Conference Hall', 'Board Room', 'Training Room'],
-    datasets: [
-      {
-        label: 'Hours Booked',
-        data: [25, 18, 30, 22, 15],
-        backgroundColor: 'rgba(255, 123, 0, 0.8)',
-        borderColor: 'rgba(255, 123, 0, 1)',
-        borderWidth: 1,
-      },
-    ],
-  };
-
-  const chartOptions = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  };
-
-  const doughnutOptions = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'right',
-      },
-    },
+    datasets: [{
+      label: 'Hours Booked',
+      data: [25, 18, 30, 22, 15],
+      backgroundColor: 'rgba(255, 123, 0, 0.8)',
+      borderColor: 'rgba(255, 123, 0, 1)',
+      borderWidth: 0,
+      borderRadius: 4,
+      barThickness: 20,
+      hoverBackgroundColor: 'rgba(255, 123, 0, 1)'
+    }]
   };
 
   return (
@@ -173,8 +221,12 @@ export default function Reports() {
           </div>
         </div>
 
-        <div style={{ height: '400px', marginTop: '1rem' }}>
-          <Line data={visitorTrafficData} options={chartOptions} />
+        <div style={{ height: '400px', marginTop: '1rem', position: 'relative' }}>
+          <Line 
+            data={visitorTrafficData} 
+            options={chartOptions}
+            redraw={false}
+          />
         </div>
       </div>
 
@@ -183,8 +235,12 @@ export default function Reports() {
           <div className="chart-header">
             <div className="chart-title">Visitor Purpose Distribution</div>
           </div>
-          <div style={{ height: '300px', padding: '1rem' }}>
-            <Doughnut data={visitorPurposeData} options={doughnutOptions} />
+          <div style={{ height: '300px', padding: '1rem', position: 'relative' }}>
+            <Doughnut 
+              data={visitorPurposeData} 
+              options={doughnutOptions}
+              redraw={false}
+            />
           </div>
         </div>
 
@@ -192,8 +248,12 @@ export default function Reports() {
           <div className="chart-header">
             <div className="chart-title">Room Usage (Hours)</div>
           </div>
-          <div style={{ height: '300px', padding: '1rem' }}>
-            <Bar data={roomBookingData} options={chartOptions} />
+          <div style={{ height: '300px', padding: '1rem', position: 'relative' }}>
+            <Bar 
+              data={roomBookingData} 
+              options={chartOptions}
+              redraw={false}
+            />
           </div>
         </div>
       </div>
