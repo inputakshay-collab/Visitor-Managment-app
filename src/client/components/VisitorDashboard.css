@@ -46,8 +46,9 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 5px;
-  background: var(--primary-gradient);
+  height: 10px;
+  background: linear-gradient(90deg, rgba(106,75,248,0.96) 0%, rgba(179,109,251,0.92) 50%, rgba(155,231,255,0.85) 100%);
+  box-shadow: 0 8px 24px rgba(106,75,248,0.08);
 }
 
 .overview-content h2 {
