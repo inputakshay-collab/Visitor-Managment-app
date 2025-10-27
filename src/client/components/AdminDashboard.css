@@ -265,7 +265,7 @@
 }
 
 .activity-item:hover {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(240, 147, 251, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(255, 123, 0, 0.05) 0%, rgba(255, 154, 68, 0.05) 100%);
   transform: translateX(5px);
 }
 
@@ -386,7 +386,7 @@
 
 .action-button:hover .action-icon {
   transform: scale(1.2);
-  filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.3));
+  filter: drop-shadow(0 4px 8px rgba(255, 123, 0, 0.30));
 }
 
 .action-icon {
@@ -443,7 +443,7 @@
 }
 
 .status-completed {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%);
   color: white;
 }
 
