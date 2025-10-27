@@ -1,0 +1,230 @@
+/* Enhanced Button Styles */
+
+.btn-modern {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary Button */
+.btn-modern--primary {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  box-shadow: 
+    0 4px 6px rgba(255, 123, 0, 0.2),
+    0 8px 12px rgba(255, 123, 0, 0.1);
+}
+
+.btn-modern--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 8px rgba(255, 123, 0, 0.25),
+    0 10px 16px rgba(255, 123, 0, 0.15);
+}
+
+/* Secondary Button */
+.btn-modern--secondary {
+  background: white;
+  color: var(--primary);
+  border: 2px solid rgba(255, 123, 0, 0.2);
+}
+
+.btn-modern--secondary:hover {
+  background: rgba(255, 123, 0, 0.05);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Success Button */
+.btn-modern--success {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  color: white;
+  border: none;
+  box-shadow: 
+    0 4px 6px rgba(16, 185, 129, 0.2),
+    0 8px 12px rgba(16, 185, 129, 0.1);
+}
+
+.btn-modern--success:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 8px rgba(16, 185, 129, 0.25),
+    0 10px 16px rgba(16, 185, 129, 0.15);
+}
+
+/* Danger Button */
+.btn-modern--danger {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  color: white;
+  border: none;
+  box-shadow: 
+    0 4px 6px rgba(239, 68, 68, 0.2),
+    0 8px 12px rgba(239, 68, 68, 0.1);
+}
+
+.btn-modern--danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 8px rgba(239, 68, 68, 0.25),
+    0 10px 16px rgba(239, 68, 68, 0.15);
+}
+
+/* Button Sizes */
+.btn-modern--sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+.btn-modern--lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* Button with Icon */
+.btn-modern--icon {
+  padding: 0.75rem;
+  border-radius: 50%;
+}
+
+/* Loading State */
+.btn-modern--loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.btn-modern--loading::after {
+  content: '';
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: button-spin 0.6s linear infinite;
+}
+
+@keyframes button-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Disabled State */
+.btn-modern:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Button Group */
+.btn-group {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+/* Ripple Effect */
+.btn-modern::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn-modern:focus:not(:active)::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* Float Animation */
+.btn-modern--float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Shine Effect */
+.btn-modern--shine {
+  position: relative;
+}
+
+.btn-modern--shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.3) 100%
+  );
+  transform: skewX(-25deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .btn-modern {
+    width: 100%;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+}
