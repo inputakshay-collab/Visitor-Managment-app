@@ -5,6 +5,94 @@ declare global {
         namespace Internal {
             interface Keys extends KeysRegistry {
                 explicit: {
+                    '067b44fc83b032102c3f57d6feaad341': {
+                        table: 'sys_ui_element'
+                        id: '067b44fc83b032102c3f57d6feaad341'
+                    }
+                    '067b803083f032102c3f57d6feaad372': {
+                        table: 'sys_ui_element'
+                        id: '067b803083f032102c3f57d6feaad372'
+                    }
+                    '0e7b0c3083b032102c3f57d6feaad374': {
+                        table: 'sys_ui_section'
+                        id: '0e7b0c3083b032102c3f57d6feaad374'
+                    }
+                    '427b44fc83b032102c3f57d6feaad342': {
+                        table: 'sys_ui_element'
+                        id: '427b44fc83b032102c3f57d6feaad342'
+                    }
+                    '427b44fc83b032102c3f57d6feaad345': {
+                        table: 'sys_ui_element'
+                        id: '427b44fc83b032102c3f57d6feaad345'
+                    }
+                    '427b803083f032102c3f57d6feaad350': {
+                        table: 'sys_ui_element'
+                        id: '427b803083f032102c3f57d6feaad350'
+                    }
+                    '427b803083f032102c3f57d6feaad353': {
+                        table: 'sys_ui_element'
+                        id: '427b803083f032102c3f57d6feaad353'
+                    }
+                    '467b44fc83b032102c3f57d6feaad344': {
+                        table: 'sys_ui_element'
+                        id: '467b44fc83b032102c3f57d6feaad344'
+                    }
+                    '467b803083f032102c3f57d6feaad34f': {
+                        table: 'sys_ui_element'
+                        id: '467b803083f032102c3f57d6feaad34f'
+                    }
+                    '467b803083f032102c3f57d6feaad352': {
+                        table: 'sys_ui_element'
+                        id: '467b803083f032102c3f57d6feaad352'
+                    }
+                    '4a7b44fc83b032102c3f57d6feaad33d': {
+                        table: 'sys_ui_section'
+                        id: '4a7b44fc83b032102c3f57d6feaad33d'
+                    }
+                    '4a7b44fc83b032102c3f57d6feaad343': {
+                        table: 'sys_ui_element'
+                        id: '4a7b44fc83b032102c3f57d6feaad343'
+                    }
+                    '4a7b44fc83b032102c3f57d6feaad346': {
+                        table: 'sys_ui_element'
+                        id: '4a7b44fc83b032102c3f57d6feaad346'
+                    }
+                    '4a7b803083f032102c3f57d6feaad351': {
+                        table: 'sys_ui_element'
+                        id: '4a7b803083f032102c3f57d6feaad351'
+                    }
+                    '4a7b803083f032102c3f57d6feaad354': {
+                        table: 'sys_ui_element'
+                        id: '4a7b803083f032102c3f57d6feaad354'
+                    }
+                    '4e7b44fc83b032102c3f57d6feaad342': {
+                        table: 'sys_ui_element'
+                        id: '4e7b44fc83b032102c3f57d6feaad342'
+                    }
+                    '4e7b44fc83b032102c3f57d6feaad345': {
+                        table: 'sys_ui_element'
+                        id: '4e7b44fc83b032102c3f57d6feaad345'
+                    }
+                    '4e7b803083f032102c3f57d6feaad350': {
+                        table: 'sys_ui_element'
+                        id: '4e7b803083f032102c3f57d6feaad350'
+                    }
+                    '4e7b803083f032102c3f57d6feaad353': {
+                        table: 'sys_ui_element'
+                        id: '4e7b803083f032102c3f57d6feaad353'
+                    }
+                    '585944f883b032102c3f57d6feaad387': {
+                        table: 'sys_scope_privilege'
+                        id: '585944f883b032102c3f57d6feaad387'
+                    }
+                    '867b803083f032102c3f57d6feaad34e': {
+                        table: 'sys_ui_element'
+                        id: '867b803083f032102c3f57d6feaad34e'
+                    }
+                    '8e7b803083f032102c3f57d6feaad371': {
+                        table: 'sys_ui_element'
+                        id: '8e7b803083f032102c3f57d6feaad371'
+                    }
                     'app.css': {
                         table: 'sys_ux_theme_asset'
                         id: '0dfd416b123b4311aa08c942eb83758e'
@@ -16,6 +104,66 @@ declare global {
                     booking_notifications: {
                         table: 'sys_script'
                         id: '50fb93cf4c794627bce8ebac0e0a6302'
+                    }
+                    c27b44fc83b032102c3f57d6feaad343: {
+                        table: 'sys_ui_element'
+                        id: 'c27b44fc83b032102c3f57d6feaad343'
+                    }
+                    c27b44fc83b032102c3f57d6feaad346: {
+                        table: 'sys_ui_element'
+                        id: 'c27b44fc83b032102c3f57d6feaad346'
+                    }
+                    c27b803083f032102c3f57d6feaad351: {
+                        table: 'sys_ui_element'
+                        id: 'c27b803083f032102c3f57d6feaad351'
+                    }
+                    c27b803083f032102c3f57d6feaad354: {
+                        table: 'sys_ui_element'
+                        id: 'c27b803083f032102c3f57d6feaad354'
+                    }
+                    c67b44fc83b032102c3f57d6feaad342: {
+                        table: 'sys_ui_element'
+                        id: 'c67b44fc83b032102c3f57d6feaad342'
+                    }
+                    c67b44fc83b032102c3f57d6feaad345: {
+                        table: 'sys_ui_element'
+                        id: 'c67b44fc83b032102c3f57d6feaad345'
+                    }
+                    c67b803083f032102c3f57d6feaad350: {
+                        table: 'sys_ui_element'
+                        id: 'c67b803083f032102c3f57d6feaad350'
+                    }
+                    c67b803083f032102c3f57d6feaad353: {
+                        table: 'sys_ui_element'
+                        id: 'c67b803083f032102c3f57d6feaad353'
+                    }
+                    ca7b44fc83b032102c3f57d6feaad344: {
+                        table: 'sys_ui_element'
+                        id: 'ca7b44fc83b032102c3f57d6feaad344'
+                    }
+                    ca7b803083f032102c3f57d6feaad34f: {
+                        table: 'sys_ui_element'
+                        id: 'ca7b803083f032102c3f57d6feaad34f'
+                    }
+                    ca7b803083f032102c3f57d6feaad352: {
+                        table: 'sys_ui_element'
+                        id: 'ca7b803083f032102c3f57d6feaad352'
+                    }
+                    ce7b44fc83b032102c3f57d6feaad343: {
+                        table: 'sys_ui_element'
+                        id: 'ce7b44fc83b032102c3f57d6feaad343'
+                    }
+                    ce7b44fc83b032102c3f57d6feaad346: {
+                        table: 'sys_ui_element'
+                        id: 'ce7b44fc83b032102c3f57d6feaad346'
+                    }
+                    ce7b803083f032102c3f57d6feaad351: {
+                        table: 'sys_ui_element'
+                        id: 'ce7b803083f032102c3f57d6feaad351'
+                    }
+                    ce7b803083f032102c3f57d6feaad354: {
+                        table: 'sys_ui_element'
+                        id: 'ce7b803083f032102c3f57d6feaad354'
                     }
                     meeting_room_1: {
                         table: 'x_1248953_vmsystem_meeting_room'
