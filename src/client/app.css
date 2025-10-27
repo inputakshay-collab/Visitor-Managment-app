@@ -55,6 +55,36 @@
   --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/* Theme variants applied via a class on the <html> element */
+html.theme-orange {
+  /* default orange theme (keeps existing variables) */
+  --primary-gradient: linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%);
+  --secondary-gradient: linear-gradient(135deg, #ffd280 0%, #ffb56b 100%);
+  --background-color: #fbfbff;
+  --surface-color: #ffffff;
+  --text-primary: #1f2937;
+}
+
+html.theme-light {
+  --primary-gradient: linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%);
+  --secondary-gradient: linear-gradient(135deg, #fff1e0 0%, #fff6ee 100%);
+  --background-color: #ffffff;
+  --surface-color: #fbfbff;
+  --text-primary: #111827;
+}
+
+html.theme-dark {
+  --primary-gradient: linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%);
+  --secondary-gradient: linear-gradient(135deg, #6b3b00 0%, #8e4d07 100%);
+  --background-color: #0b1220;
+  --surface-color: #0f1724;
+  --text-primary: #e6eef8;
+  --text-secondary: #cbd5e1;
+  --border-color: rgba(255,123,0,0.06);
+  --shadow-md: 0 8px 18px rgba(0,0,0,0.6);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -822,6 +852,16 @@ body::before {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
+.theme-toggle {
+  min-width: 120px;
+  padding: 0.5rem 0.9rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.04);
+  color: inherit;
+  border-radius: var(--radius-lg);
+}
+
 
 ::-webkit-scrollbar-track {
   background: var(--background-color);

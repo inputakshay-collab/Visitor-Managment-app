@@ -3,6 +3,7 @@ import VisitorDashboard from './components/VisitorDashboard.jsx';
 import RoomBookingDashboard from './components/RoomBookingDashboard.jsx';
 import AdminDashboard from './components/AdminDashboard.jsx';
 import './app.css';
+import ThemeToggle from './components/ThemeToggle.jsx';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -68,11 +69,14 @@ export default function App() {
             <h1>🏢 Visitor & Meeting Room Concierge</h1>
             <p>✨ Welcome back, {userName}! Ready to manage your facility with style?</p>
           </div>
-          <div className="user-info">
-            <div className="user-profile">
-              <span className="user-name">{userName}</span>
-              <div className="user-avatar">
-                {userInitial}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <ThemeToggle />
+            <div className="user-info">
+              <div className="user-profile">
+                <span className="user-name">{userName}</span>
+                <div className="user-avatar">
+                  {userInitial}
+                </div>
               </div>
             </div>
           </div>
