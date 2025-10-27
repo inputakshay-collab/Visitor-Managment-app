@@ -47,7 +47,7 @@
   left: 0;
   right: 0;
   height: 10px;
-  background: linear-gradient(90deg, rgba(106,75,248,0.96) 0%, rgba(179,109,251,0.92) 50%, rgba(155,231,255,0.85) 100%);
+  background: linear-gradient(90deg, rgba(255,123,0,0.96) 0%, rgba(255,154,68,0.92) 50%, rgba(255,210,128,0.85) 100%);
   box-shadow: 0 8px 24px rgba(106,75,248,0.08);
 }
 
