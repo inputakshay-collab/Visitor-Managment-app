@@ -158,11 +158,18 @@ export default function VisitorDashboard({ currentUser }) {
                   key: 'approval_status',
                   label: 'Status',
                   type: 'status',
-                  render: (value, row) => (
-                    <span className={`status-pill status-${value?.toLowerCase()}`}>
-                      {typeof value === 'object' ? value.display_value : value}
-                    </span>
-                  )
+                    render: (value, row) => {
+                      // Normalize ServiceNow field (can be object with display_value/value or a plain string)
+                      const raw = value;
+                      const val = (typeof raw === 'object' && raw !== null) ? (raw.value ?? raw.display_value ?? '') : raw ?? '';
+                      const classKey = String(val).toLowerCase().replace(/\s+/g, '_');
+                      const display = (typeof raw === 'object' && raw !== null) ? (raw.display_value ?? raw.value ?? String(raw)) : raw;
+                      return (
+                        <span className={`status-pill status-${classKey}`}>
+                          {display}
+                        </span>
+                      );
+                    }
                 },
                 {
                   key: 'actions',
