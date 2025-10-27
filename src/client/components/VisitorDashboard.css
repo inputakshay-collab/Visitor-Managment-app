@@ -1,0 +1,322 @@
+/* Enhanced Visitor Dashboard Styles with Premium Design */
+
+.visitor-dashboard {
+  animation: fadeIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8faff 0%, #e6f3ff 100%);
+  border-radius: var(--radius-2xl);
+  margin: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.dashboard-loading .loading-spinner {
+  margin-bottom: 2rem;
+  width: 60px;
+  height: 60px;
+}
+
+.dashboard-loading p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Beautiful Overview Content */
+.overview-content {
+  background: var(--surface-color);
+  border-radius: var(--radius-2xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.overview-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--primary-gradient);
+}
+
+.overview-content h2 {
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced Form Styles */
+.visitor-form,
+.request-form {
+  background: var(--surface-color);
+  border-radius: var(--radius-2xl);
+  padding: 3rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-color);
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+}
+
+.visitor-form::before,
+.request-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--secondary-gradient);
+}
+
+.visitor-form h2,
+.request-form h2 {
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--secondary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border-color);
+}
+
+/* Premium Check-in/Check-out Cards */
+.checkin-card {
+  background: var(--surface-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  transition: var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.checkin-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  transition: var(--transition);
+}
+
+.checkin-card.pending::before {
+  background: var(--warning-gradient);
+}
+
+.checkin-card.checked-in::before {
+  background: var(--success-gradient);
+}
+
+.checkin-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.checkin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.visitor-info h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.visitor-info p {
+  margin: 0.25rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.visitor-info p strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.checkin-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.checkin-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.checkin-time {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Action Buttons Styling */
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* No Visitors State */
+.no-visitors {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8faff 0%, #e6f3ff 100%);
+  border-radius: var(--radius-xl);
+  border: 2px dashed var(--border-color);
+}
+
+.no-visitors p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Checkbox Styling */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 1rem;
+  background: var(--background-color);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.checkbox-label:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--primary-color);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .action-bar {
+    flex-direction: column;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .checkin-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .checkin-actions {
+    flex-direction: column;
+  }
+  
+  .visitor-form,
+  .request-form {
+    padding: 2rem;
+  }
+  
+  .overview-content {
+    padding: 2rem;
+  }
+}
+
+/* Special animations for form elements */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  animation: inputFocus 0.3s ease;
+}
+
+@keyframes inputFocus {
+  0% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.01); 
+  }
+  100% { 
+    transform: scale(1); 
+  }
+}
+
+/* Hover effects for interactive elements */
+.checkin-card:hover .visitor-info h4 {
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.form-group:hover .form-label {
+  color: var(--primary-color);
+  transition: var(--transition);
+}
