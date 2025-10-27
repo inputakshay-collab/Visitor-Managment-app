@@ -4,6 +4,8 @@ import RoomBookingDashboard from './components/RoomBookingDashboard.jsx';
 import AdminDashboard from './components/AdminDashboard.jsx';
 import Reports from './components/Reports.jsx';
 import './app.css';
+import './components/enhanced-forms.css';
+import './components/enhanced-buttons.css';
 import ThemeToggle from './components/ThemeToggle.jsx';
 
 export default function App() {
