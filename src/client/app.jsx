@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import VisitorDashboard from './components/VisitorDashboard.jsx';
 import RoomBookingDashboard from './components/RoomBookingDashboard.jsx';
 import AdminDashboard from './components/AdminDashboard.jsx';
+import Reports from './components/Reports.jsx';
 import './app.css';
 import ThemeToggle from './components/ThemeToggle.jsx';
 
@@ -41,6 +42,7 @@ export default function App() {
     { id: 'dashboard', label: 'Overview', icon: '🏠', gradient: 'linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%)' },
     { id: 'visitors', label: 'Visitor Hub', icon: '👥', gradient: 'linear-gradient(135deg, #ff944d 0%, #ffb56b 100%)' },
     { id: 'rooms', label: 'Room Booking', icon: '🏢', gradient: 'linear-gradient(135deg, #ff7b00 0%, #ffd280 100%)' },
+    { id: 'reports', label: 'Reports', icon: '📊', gradient: 'linear-gradient(135deg, #ff9a44 0%, #ffb56b 100%)' },
     { id: 'admin', label: 'Control Center', icon: '⚙️', gradient: 'linear-gradient(135deg, #ffb56b 0%, #ff7b00 100%)' }
   ];
 
@@ -110,6 +112,7 @@ export default function App() {
           {activeTab === 'dashboard' && <VisitorDashboard currentUser={currentUser} />}
           {activeTab === 'visitors' && <VisitorDashboard currentUser={currentUser} />}
           {activeTab === 'rooms' && <RoomBookingDashboard currentUser={currentUser} />}
+          {activeTab === 'reports' && <Reports currentUser={currentUser} />}
           {activeTab === 'admin' && <AdminDashboard currentUser={currentUser} />}
         </div>
       </main>
