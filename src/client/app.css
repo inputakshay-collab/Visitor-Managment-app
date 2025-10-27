@@ -89,15 +89,15 @@ body::before {
 @keyframes backgroundShift {
   0%, 100% { 
     background: 
-      radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(79, 172, 254, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 20% 80%, rgba(255, 123, 0, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 154, 68, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(255, 210, 128, 0.05) 0%, transparent 50%);
   }
   50% { 
     background: 
-      radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 20% 80%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 60% 60%, rgba(79, 172, 254, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 80% 20%, rgba(255, 123, 0, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(255, 154, 68, 0.10) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, rgba(255, 210, 128, 0.05) 0%, transparent 50%);
   }
 }
 
@@ -315,7 +315,7 @@ body::before {
 .nav-tab.active {
   color: var(--primary-color);
   border-bottom-color: var(--primary-color);
-  background: rgba(102, 126, 234, 0.05);
+  background: rgba(255, 123, 0, 0.05);
 }
 
 .nav-tab.active::before {
@@ -371,9 +371,9 @@ body::before {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, rgba(106,75,248,1) 0%, rgba(179,109,251,0.92) 60%);
+  background: linear-gradient(90deg, rgba(255,123,0,1) 0%, rgba(255,154,68,0.92) 60%);
   transition: var(--transition);
-  box-shadow: 0 8px 22px rgba(106,75,248,0.06);
+  box-shadow: 0 8px 22px rgba(255,123,0,0.06);
 }
 
 .dashboard-card:hover {
@@ -463,7 +463,7 @@ body::before {
 .form-textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 4px rgba(255, 123, 0, 0.10);
   transform: translateY(-1px);
 }
 
@@ -627,7 +627,7 @@ body::before {
 
 .status-completed,
 .status-checked-out {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%);
   color: white;
 }
 
@@ -669,11 +669,11 @@ body::before {
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid rgba(106,75,248,0.06);
+  border-bottom: 1px solid rgba(255,123,0,0.06);
 }
 
 .data-table tr:hover {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(240, 147, 251, 0.02) 100%);
+  background: linear-gradient(135deg, rgba(255, 123, 0, 0.02) 0%, rgba(255, 154, 68, 0.02) 100%);
 }
 
 /* Action Bar */

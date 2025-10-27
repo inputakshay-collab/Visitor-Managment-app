@@ -37,7 +37,7 @@ export default function App() {
   };
 
   const tabs = [
-    { id: 'dashboard', label: 'Overview', icon: '🏠', gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' },
+    { id: 'dashboard', label: 'Overview', icon: '🏠', gradient: 'linear-gradient(135deg, #ff7b00 0%, #ff9a44 100%)' },
     { id: 'visitors', label: 'Visitor Hub', icon: '👥', gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)' },
     { id: 'rooms', label: 'Room Booking', icon: '🏢', gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)' },
     { id: 'admin', label: 'Control Center', icon: '⚙️', gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)' }
@@ -89,7 +89,7 @@ export default function App() {
               onClick={() => setActiveTab(tab.id)}
               style={{
                 background: activeTab === tab.id ? 
-                  `linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%)` : 
+                  `linear-gradient(135deg, rgba(255, 123, 0, 0.10) 0%, rgba(255, 154, 68, 0.10) 100%)` : 
                   'transparent'
               }}
             >
