@@ -16,14 +16,7 @@ export default function App() {
 
   const fetchCurrentUser = async () => {
     try {
-      // Guard against missing ServiceNow globals when running outside the platform
-      if (!window?.g_user?.userName || !window?.g_ck) {
-        console.warn('ServiceNow globals (window.g_user / window.g_ck) are not available. Skipping user fetch.');
-        setCurrentUser(null);
-        return;
-      }
-
-      const response = await fetch('/api/now/table/sys_user?sysparm_query=user_name=' + encodeURIComponent(window.g_user.userName) + '&sysparm_limit=1', {
+      const response = await fetch('/api/now/table/sys_user?sysparm_query=user_name=' + window.g_user.userName + '&sysparm_limit=1', {
         headers: {
           'Accept': 'application/json',
           'X-UserToken': window.g_ck
